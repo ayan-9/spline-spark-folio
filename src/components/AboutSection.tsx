@@ -4,9 +4,8 @@ import { Code, Palette, Rocket, Zap } from "lucide-react";
 
 const AboutSection = () => {
   const skills = [
-    "React", "TypeScript", "Node.js", "Python", "Three.js", "WebGL",
-    "Next.js", "Express", "MongoDB", "PostgreSQL", "AWS", "Docker",
-    "Tailwind CSS", "Framer Motion", "GraphQL", "REST APIs"
+    "C", "C++", "Python", "HTML", "CSS", "Java", 
+    "React", "Tailwind CSS", "Next.js", "Three.js"
   ];
 
   const features = [
@@ -50,14 +49,10 @@ const AboutSection = () => {
           <GlassCard variant="default" className="animate-slide-in">
             <h3 className="text-2xl font-semibold mb-4 text-foreground">My Journey</h3>
             <p className="text-foreground/80 leading-relaxed mb-4">
-              With over 5 years of experience in web development, I've had the privilege of working 
-              on diverse projects ranging from e-commerce platforms to interactive art installations. 
-              My passion lies in the intersection of technology and creativity.
+              My journey in technology began with a deep curiosity about how software works and the impact it can create. Choosing to pursue a degree in Computer Science and Information Technology (CSIT) has been the foundation of my growth, giving me exposure to both theory and practical aspects of computing. From understanding logic building to exploring the fundamentals of programming, every step has fueled my interest in solving problems through code.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              I believe in writing clean, maintainable code and creating user experiences that not 
-              only look beautiful but also perform exceptionally well. Every project is an opportunity 
-              to learn something new and push the boundaries of what's possible on the web.
+              Over time, I have gained hands-on experience with multiple programming languages including C, C++, Python, Java, HTML, and CSS. Each project and challenge I've taken on has shaped me into a more confident developer, capable of adapting to different technologies. My goal is to keep learning, building, and innovating — turning ideas into solutions that not only work but inspire others as well.
             </p>
           </GlassCard>
 

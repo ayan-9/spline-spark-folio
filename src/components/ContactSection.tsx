@@ -36,19 +36,19 @@ const ContactSection = () => {
     {
       name: "GitHub",
       icon: <Github size={20} />,
-      url: "https://github.com",
+      url: "https://github.com/ayan-9",
       color: "hover:text-primary"
     },
     {
       name: "LinkedIn",
       icon: <Linkedin size={20} />,
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/muhammad-ayan-anwer-2a5988371/",
       color: "hover:text-primary"
     },
     {
-      name: "Twitter",
+      name: "Instagram",
       icon: <Twitter size={20} />,
-      url: "https://twitter.com",
+      url: "https://www.instagram.com/final_boss.01/",
       color: "hover:text-secondary"
     }
   ];
@@ -148,7 +148,7 @@ const ContactSection = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-foreground/70">
                     <Mail size={16} className="text-primary" />
-                    <span>john.doe@example.com</span>
+                    <span>muhammadayananwer5@gmail.com</span>
                   </div>
                 </div>
 

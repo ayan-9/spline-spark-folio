@@ -26,23 +26,21 @@ const HeroSection = () => {
               
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
                 <span className="bg-gradient-primary bg-clip-text text-transparent animate-glow-pulse">
-                  John
+                  Muhammad Ayan
                 </span>
                 {" "}
                 <span className="text-foreground">
-                  Doe
+                  Anwer
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-                Full-Stack Developer & Digital Creator
+                CSIT Student & Software Developer
               </p>
             </div>
 
             <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Crafting immersive digital experiences through cutting-edge technology. 
-              Specializing in React, Node.js, and 3D web development. 
-              Building the future, one pixel at a time.
+              Pursuing CSIT degree, skilled in C, C++, Python, Java, HTML, CSS; passionate about software development, problem-solving, and innovation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">

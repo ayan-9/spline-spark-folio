@@ -27,72 +27,95 @@ const CoursesSection = () => {
   const courses: Course[] = [
     {
       id: "1",
-      title: "Modern React Development",
-      description: "Master React 18+ with hooks, context, and modern patterns",
-      longDescription: "Dive deep into modern React development with this comprehensive course. You'll learn React 18+ features, advanced hooks, state management, performance optimization, and build real-world applications. Perfect for developers who want to level up their React skills.",
-      price: "$99",
-      duration: "12 weeks",
-      students: "2,500+",
-      level: "Intermediate",
-      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
+      title: "C++ Programming",
+      description: "Notes, explanations, practice problems for quizzes and exams",
+      longDescription: "Comprehensive C++ programming course with detailed notes, explanations, and practice problems. Perfect for students preparing for quizzes and exams. Covers fundamental concepts to advanced topics with hands-on coding exercises.",
+      price: "Free",
+      duration: "Self-paced",
+      students: "500+",
+      level: "Beginner to Advanced",
+      technologies: ["C++", "OOP", "STL", "Data Structures"],
       features: [
-        "React 18+ features and concurrent rendering",
-        "Advanced hooks and custom hook creation",
-        "State management with Context and Zustand",
-        "Performance optimization techniques",
-        "Server-side rendering with Next.js",
-        "Building responsive UIs with Tailwind CSS",
-        "Adding animations with Framer Motion",
-        "Testing with Jest and React Testing Library"
+        "Complete C++ syntax and fundamentals",
+        "Object-oriented programming concepts",
+        "Standard Template Library (STL)",
+        "Memory management and pointers",
+        "Practice problems with solutions",
+        "Quiz preparation materials",
+        "Exam-focused examples",
+        "Code optimization techniques"
       ],
-      launchDate: "Jan 2024",
-      url: "https://example.com/react-course"
+      launchDate: "2024",
+      url: "https://github.com/ayan-9/Cpp"
     },
     {
       id: "2",
-      title: "3D Web Development",
-      description: "Create stunning 3D experiences with Three.js and WebGL",
-      longDescription: "Learn to create immersive 3D web experiences using Three.js, WebGL, and modern web technologies. This course covers everything from basic 3D concepts to advanced rendering techniques and interactive animations.",
-      price: "$149",
-      duration: "16 weeks",
-      students: "1,200+",
-      level: "Advanced",
-      technologies: ["Three.js", "WebGL", "GLSL", "Blender", "React Three Fiber"],
+      title: "Python Programming",
+      description: "Notes, explanations, practice problems for quizzes and exams",
+      longDescription: "Complete Python programming course designed for students. Includes comprehensive notes, detailed explanations, and practice problems to help you excel in quizzes and exams. From basics to advanced concepts.",
+      price: "Free",
+      duration: "Self-paced",
+      students: "800+",
+      level: "Beginner to Advanced",
+      technologies: ["Python", "Libraries", "Data Structures", "Algorithms"],
       features: [
-        "3D fundamentals and coordinate systems",
-        "Three.js scene setup and rendering",
-        "Working with geometries, materials, and lights",
-        "Creating animations and interactions",
-        "GLSL shader programming",
-        "Optimizing 3D performance",
-        "Integrating with React Three Fiber",
-        "Building portfolio-worthy projects"
+        "Python fundamentals and syntax",
+        "Data structures and algorithms",
+        "Object-oriented programming in Python",
+        "Popular Python libraries",
+        "Practice problems with detailed solutions",
+        "Quiz and exam preparation",
+        "Real-world coding examples",
+        "Best practices and conventions"
       ],
-      launchDate: "Mar 2024",
-      url: "https://example.com/3d-course"
+      launchDate: "2024",
+      url: "https://github.com/ayan-9/Python-Course"
     },
     {
       id: "3",
-      title: "Full-Stack TypeScript",
-      description: "Build scalable applications with TypeScript, Node.js, and PostgreSQL",
-      longDescription: "Master full-stack development with TypeScript. Learn to build robust backends with Node.js, work with databases, create APIs, and integrate everything with modern frontend frameworks. Perfect for developers who want to work across the entire stack.",
-      price: "$199",
-      duration: "20 weeks",
-      students: "3,100+",
-      level: "Intermediate",
-      technologies: ["TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma", "Docker"],
+      title: "Frontend Web Development",
+      description: "Notes, explanations with folders to create your first website step by step",
+      longDescription: "Complete frontend web development course with organized folders and step-by-step tutorials. Learn to create your first website from scratch with detailed explanations and practical examples. Perfect for beginners starting their web development journey.",
+      price: "Free",
+      duration: "Self-paced",
+      students: "1,200+",
+      level: "Beginner",
+      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
       features: [
-        "TypeScript fundamentals and advanced types",
-        "Building REST APIs with Express",
-        "Database design and management with PostgreSQL",
-        "ORM with Prisma for type-safe database access",
-        "Authentication and authorization",
-        "Testing strategies for full-stack applications",
-        "Deployment with Docker and cloud platforms",
-        "Real-time features with WebSockets"
+        "HTML fundamentals and semantic markup",
+        "CSS styling and layout techniques",
+        "JavaScript programming basics",
+        "Responsive web design principles",
+        "Step-by-step project tutorials",
+        "Organized folder structure",
+        "Best practices and modern techniques",
+        "Portfolio project examples"
       ],
-      launchDate: "Feb 2024",
-      url: "https://example.com/fullstack-course"
+      launchDate: "2024",
+      url: "https://github.com/ayan-9/Frontend-Web"
+    },
+    {
+      id: "4",
+      title: "Data Structures & Algorithms",
+      description: "Notes, explanations, practice problems for quizzes and exams",
+      longDescription: "Comprehensive DSA course with detailed notes, explanations, and practice problems. Essential for computer science students preparing for quizzes, exams, and technical interviews. Covers all fundamental data structures and algorithms.",
+      price: "Free",
+      duration: "Self-paced",
+      students: "600+",
+      level: "Intermediate",
+      technologies: ["Algorithms", "Data Structures", "Problem Solving", "Complexity Analysis"],
+      features: [
+        "Fundamental data structures (Arrays, Lists, Trees, Graphs)",
+        "Sorting and searching algorithms",
+        "Dynamic programming concepts",
+        "Time and space complexity analysis",
+        "Practice problems with step-by-step solutions",
+        "Interview preparation materials",
+        "Quiz and exam focused content",
+        "Algorithm implementation examples"
+      ],
+      launchDate: "2024",
+      url: "https://github.com/ayan-9/DSA-COURSE"
     }
   ];
 
@@ -121,7 +144,7 @@ const CoursesSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {courses.map((course, index) => (
               <GlassCard 
                 key={course.id} 
