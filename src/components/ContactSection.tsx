@@ -148,7 +148,8 @@ const ContactSection = () => {
                   I'm always open to discussing new opportunities, creative projects, 
                   and innovative ideas. Whether you're a startup looking to build 
                   something amazing or an established company seeking to innovate, 
-                  let's explore how we can work together.
+                  let's explore how we can work together. If you want to connect or 
+                  collaborate on a project, feel free to reach out via email or WhatsApp.
                 </p>
 
                 <div className="space-y-3">
