@@ -29,7 +29,7 @@ const HeroSection = () => {
                   Muhammad Ayan
                 </span>
                 {" "}
-                <span className="text-foreground">
+                <span className="bg-gradient-secondary bg-clip-text text-transparent">
                   Anwer
                 </span>
               </h1>

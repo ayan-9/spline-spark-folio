@@ -3,7 +3,7 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, MessageCircle, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MessageCircle, Send, Github, Linkedin, Facebook, Phone } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -46,10 +46,10 @@ const ContactSection = () => {
       color: "hover:text-primary"
     },
     {
-      name: "Instagram",
-      icon: <Twitter size={20} />,
-      url: "https://www.instagram.com/final_boss.01/",
-      color: "hover:text-secondary"
+      name: "Facebook",
+      icon: <Facebook size={20} />,
+      url: "https://www.facebook.com/ayan.anwer.54",
+      color: "hover:text-primary"
     }
   ];
 
@@ -149,6 +149,10 @@ const ContactSection = () => {
                   <div className="flex items-center gap-3 text-foreground/70">
                     <Mail size={16} className="text-primary" />
                     <span>muhammadayananwer5@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-foreground/70">
+                    <Phone size={16} className="text-secondary" />
+                    <span>+92 345 2284536</span>
                   </div>
                 </div>
 
