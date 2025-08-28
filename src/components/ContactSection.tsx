@@ -42,7 +42,7 @@ const ContactSection = () => {
     {
       name: "LinkedIn",
       icon: <Linkedin size={20} />,
-      url: "https://www.linkedin.com/in/muhammad-ayan-anwer-2a5988371/",
+      url: "https://www.linkedin.com/in/muhammadayananwer/",
       color: "hover:text-primary"
     },
     {
