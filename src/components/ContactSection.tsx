@@ -13,16 +13,57 @@ const ContactSection = () => {
     email: '',
     message: ''
   });
+  const [webhookUrl, setWebhookUrl] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    
+    if (!webhookUrl) {
+      toast({
+        title: "Setup Required",
+        description: "Please add your Zapier webhook URL to receive messages.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    console.log("Sending message via Zapier webhook:", webhookUrl);
+
+    try {
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          timestamp: new Date().toISOString(),
+          sent_to: "muhammadayananwer5@gmail.com",
+          source: "Portfolio Contact Form"
+        }),
+      });
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -83,6 +124,22 @@ const ContactSection = () => {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
+                  <Label htmlFor="webhookUrl" className="text-foreground">Zapier Webhook URL (Admin Only)</Label>
+                  <Input
+                    id="webhookUrl"
+                    name="webhookUrl"
+                    type="url"
+                    value={webhookUrl}
+                    onChange={(e) => setWebhookUrl(e.target.value)}
+                    className="bg-input/50 border-card-border text-foreground placeholder:text-muted-foreground"
+                    placeholder="https://hooks.zapier.com/hooks/catch/..."
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    Set up a Zap to receive messages in your email
+                  </p>
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground">Name</Label>
                   <Input
                     id="name"
@@ -128,8 +185,9 @@ const ContactSection = () => {
                   variant="hero" 
                   size="lg" 
                   className="w-full group"
+                  disabled={isLoading}
                 >
-                  Send Message
+                  {isLoading ? "Sending..." : "Send Message"}
                   <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
                 </Button>
               </form>
