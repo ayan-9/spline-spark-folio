@@ -6,7 +6,7 @@ const AboutSection = () => {
   const skills = [
     "C", "C++", "Python", "HTML", "CSS", "Java", 
     "React", "Tailwind CSS", "Next.js", "Three.js",
-    "Cyber Security", "Artificial Intelligence", "Leadership Skills"
+    "Cyber Security", "Artificial Intelligence", "Leadership Skills", "Problem Solving"
   ];
 
   const features = [
