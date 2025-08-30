@@ -5,7 +5,8 @@ import { Code, Palette, Rocket, Zap } from "lucide-react";
 const AboutSection = () => {
   const skills = [
     "C", "C++", "Python", "HTML", "CSS", "Java", 
-    "React", "Tailwind CSS", "Next.js", "Three.js"
+    "React", "Tailwind CSS", "Next.js", "Three.js",
+    "Cyber Security", "Artificial Intelligence", "Leadership Skills"
   ];
 
   const features = [
