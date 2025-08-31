@@ -7,7 +7,7 @@ import { Mail, MessageCircle, Send, Github, Linkedin, Facebook, Phone, Instagram
 import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import CountryCodeSelect from "@/components/CountryCodeSelect";
+import CountryCodeSelect, { countryCodes } from "@/components/CountryCodeSelect";
 import { validateContactForm, sanitizeContactForm, VALIDATION_LIMITS } from "@/lib/validation";
 
 const ContactSection = () => {
@@ -18,6 +18,7 @@ const ContactSection = () => {
     message: ''
   });
   const [countryCode, setCountryCode] = useState('+92');
+  const [phoneExample, setPhoneExample] = useState('300 1234567');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
   const lastSubmissionTime = useRef<number>(0);
@@ -219,6 +220,7 @@ const ContactSection = () => {
                     <CountryCodeSelect
                       value={countryCode}
                       onValueChange={setCountryCode}
+                      onExampleChange={setPhoneExample}
                     />
                     <Input
                       id="phone"
@@ -228,7 +230,7 @@ const ContactSection = () => {
                       onChange={handleChange}
                       maxLength={VALIDATION_LIMITS.PHONE_MAX}
                       className="flex-1 bg-input/50 border-card-border text-foreground placeholder:text-muted-foreground"
-                      placeholder="300 1234567"
+                      placeholder={phoneExample}
                       aria-describedby="phone-help"
                     />
                   </div>
