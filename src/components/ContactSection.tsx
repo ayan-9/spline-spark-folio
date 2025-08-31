@@ -67,6 +67,8 @@ const ContactSection = () => {
         body: sanitizedData
       });
 
+      console.log('Edge function response:', { data, error });
+
       if (error) {
         // Reset rate limiting on server error to allow retry
         lastSubmissionTime.current = 0;
