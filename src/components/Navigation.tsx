@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
-import { Github, Menu, X } from "lucide-react";
+import { Github, Menu, X, LogIn } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -60,6 +62,15 @@ const Navigation = () => {
                 GitHub
               </a>
             </Button>
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={() => navigate('/auth')}
+              className="flex items-center gap-2"
+            >
+              <LogIn size={16} />
+              Admin
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -112,6 +123,15 @@ const Navigation = () => {
                 <Github size={16} />
                 GitHub
               </a>
+            </Button>
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={() => navigate('/auth')}
+              className="w-full justify-start"
+            >
+              <LogIn size={16} />
+              Admin
             </Button>
           </div>
         )}

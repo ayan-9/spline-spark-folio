@@ -7,6 +7,7 @@ import { Mail, MessageCircle, Send, Github, Linkedin, Facebook, Phone, Instagram
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import CountryCodeSelect from "@/components/CountryCodeSelect";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ const ContactSection = () => {
     phone: '',
     message: ''
   });
+  const [countryCode, setCountryCode] = useState('+92');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -24,7 +26,10 @@ const ContactSection = () => {
     
     try {
       const { data, error } = await supabase.functions.invoke('submit-contact', {
-        body: formData
+        body: {
+          ...formData,
+          phone: formData.phone ? `${countryCode} ${formData.phone}` : ''
+        }
       });
 
       if (error) {
@@ -135,15 +140,21 @@ const ContactSection = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-foreground">Contact Number</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="bg-input/50 border-card-border text-foreground placeholder:text-muted-foreground"
-                    placeholder="+92 300 1234567 (optional)"
-                  />
+                  <div className="flex gap-2">
+                    <CountryCodeSelect
+                      value={countryCode}
+                      onValueChange={setCountryCode}
+                    />
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="flex-1 bg-input/50 border-card-border text-foreground placeholder:text-muted-foreground"
+                      placeholder="300 1234567"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
