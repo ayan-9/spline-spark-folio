@@ -185,6 +185,12 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     // Insert the contact message into the database
+    console.log('Attempting to insert contact message:', { 
+      name: sanitizedName, 
+      email: sanitizedEmail, 
+      hasPhone: !!sanitizedPhone 
+    });
+    
     const { data, error } = await supabase
       .from('contact_messages')
       .insert([
