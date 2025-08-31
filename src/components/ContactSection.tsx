@@ -6,22 +6,47 @@ import { Label } from "@/components/ui/label";
 import { Mail, MessageCircle, Send, Github, Linkedin, Facebook, Phone, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-contact', {
+        body: formData
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error: any) {
+      console.error('Error submitting contact form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -109,6 +134,19 @@ const ContactSection = () => {
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-foreground">Contact Number</Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="bg-input/50 border-card-border text-foreground placeholder:text-muted-foreground"
+                    placeholder="+92 300 1234567 (optional)"
+                  />
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="message" className="text-foreground">Message</Label>
                   <Textarea
                     id="message"
@@ -127,8 +165,9 @@ const ContactSection = () => {
                   variant="hero" 
                   size="lg" 
                   className="w-full group"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
                 </Button>
               </form>
