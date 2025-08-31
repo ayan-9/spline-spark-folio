@@ -27,14 +27,14 @@ export interface ValidationResult {
 export function sanitizeInput(input: string): string {
   if (!input) return '';
   
-  // Remove any HTML tags and sanitize
+  // Remove any HTML tags and sanitize using DOMPurify
   const sanitized = DOMPurify.sanitize(input, { 
     ALLOWED_TAGS: [],
     ALLOWED_ATTR: []
   });
   
-  // Trim whitespace and normalize line breaks
-  return sanitized.trim().replace(/\r\n/g, '\n');
+  // Trim whitespace and normalize
+  return sanitized.trim().replace(/\s+/g, ' ');
 }
 
 export function validateName(name: string): ValidationResult {

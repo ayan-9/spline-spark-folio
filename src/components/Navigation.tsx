@@ -15,7 +15,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 p-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 p-2 md:p-4">
       <GlassCard variant="default" size="compact" className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between">
           <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
