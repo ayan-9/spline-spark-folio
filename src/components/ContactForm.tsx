@@ -47,9 +47,9 @@ const ContactForm: React.FC = () => {
 
   // EmailJS configuration placeholders
   const EMAIL_CONFIG: EmailConfig = {
-    SERVICE_ID: 'YOUR_SERVICE_ID',
-    TEMPLATE_ID: 'YOUR_TEMPLATE_ID',
-    PUBLIC_KEY: 'YOUR_PUBLIC_KEY'
+    SERVICE_ID: 'service_k9ak9zb',
+    TEMPLATE_ID: 'template_pwxzq09',
+    PUBLIC_KEY: '2PU3JNSBQ-hZXOeCX'
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
