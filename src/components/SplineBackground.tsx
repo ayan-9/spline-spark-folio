@@ -30,12 +30,14 @@ const SplineBackground = ({ className }: SplineBackgroundProps) => {
     <div className={`fixed inset-0 z-0 ${className || ''}`}>
       <iframe 
         src="https://my.spline.design/prismcoin-HAV3dbCekEf5sAr3Q2XY3UUm/" 
-        frameBorder="0"
+        frameBorder="0" 
         width="100%" 
         height="100%"
         className="w-full h-full"
         style={{ pointerEvents: 'auto' }}
       />
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]" />
     </div>
   );
 };
