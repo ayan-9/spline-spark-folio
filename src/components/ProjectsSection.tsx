@@ -29,14 +29,14 @@ const ProjectsSection = () => {
     {
       id: "1",
       title: "Musa Escape",
-      description: "C++ Game Project with graphics - A story-based console puzzle game",
-      longDescription: "Musa Escape is a story-based console game developed in C++, where a child named Musa is alone in his house after his parents leave. The house contains 7 different rooms, each filled with riddles, puzzles, and logical challenges. The goal is to help Musa overcome his fear, solve the riddles, and find a way out of the house.\n\nThis project is designed to demonstrate strong programming logic, game flow control, and problem-solving skills, making it an excellent academic and portfolio-level project.",
+      description: "C Game Project with graphics - A story-based console puzzle game",
+      longDescription: "Musa Escape is a story-based console game developed in C, where a child named Musa is alone in his house after his parents leave. The house contains 7 different rooms, each filled with riddles, puzzles, and logical challenges. The goal is to help Musa overcome his fear, solve the riddles, and find a way out of the house.\n\nThis project is designed to demonstrate strong programming logic, game flow control, and problem-solving skills, making it an excellent academic and portfolio-level project.",
       price: "Paid",
       duration: "Self-paced",
       users: "500+",
       level: "Beginner to Intermediate",
       technologies: [
-        "C++",
+        "C",
         "Object-Oriented Programming (OOP)",
         "Data Structures",
         "Functions & Control Flow",
@@ -44,7 +44,7 @@ const ProjectsSection = () => {
         "Game Logic & Algorithms"
       ],
       features: [
-        "Story-driven game design in C++",
+        "Story-driven game design in C",
         "Implementation of riddles and puzzles",
         "Use of OOP concepts (classes, objects, encapsulation)",
         "Decision-making using conditions and loops",
@@ -56,7 +56,7 @@ const ProjectsSection = () => {
       launchDate: "2025",
       videoUrl: "/videos/musa-escape-demo.mp4",
       idealFor: [
-        "C++ learners",
+        "C learners",
         "University students",
         "DSA & OOP practice",
         "Final-year or semester projects"
@@ -85,7 +85,7 @@ const ProjectsSection = () => {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore my portfolio of projects showcasing programming skills and creative problem-solving
+              Explore my projects showcasing programming skills and creative problem-solving
             </p>
           </div>
 
