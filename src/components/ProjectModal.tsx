@@ -60,6 +60,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               <video 
                 controls 
                 autoPlay 
+                preload="auto"
+                playsInline
                 className="w-full aspect-video"
                 src={project.videoUrl}
               >
