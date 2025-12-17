@@ -3,8 +3,8 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { ArrowDown, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
-  const scrollToAbout = () => {
-    const element = document.getElementById('about');
+  const scrollToCourses = () => {
+    const element = document.getElementById('courses');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -47,7 +47,7 @@ const HeroSection = () => {
               <Button 
                 variant="hero" 
                 size="hero"
-                onClick={scrollToAbout}
+                onClick={scrollToCourses}
                 className="group"
               >
                 Explore My Work
