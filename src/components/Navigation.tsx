@@ -40,6 +40,13 @@ const Navigation = () => {
             </Button>
             <Button 
               variant="ghost" 
+              onClick={() => scrollToSection('projects')}
+              className="text-foreground hover:text-primary"
+            >
+              Projects
+            </Button>
+            <Button 
+              variant="ghost" 
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary"
             >
@@ -89,6 +96,13 @@ const Navigation = () => {
               className="w-full justify-start text-foreground hover:text-primary"
             >
               About
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={() => scrollToSection('projects')}
+              className="w-full justify-start text-foreground hover:text-primary"
+            >
+              Projects
             </Button>
             <Button 
               variant="ghost" 
